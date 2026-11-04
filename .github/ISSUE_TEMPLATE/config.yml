@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Preguntas y propuestas
+    url: https://github.com/S3rri-dev/caudal/discussions
+    about: Ayuda de uso e ideas con datos ficticios.
+  - name: Vulnerabilidad de seguridad
+    url: https://github.com/S3rri-dev/caudal/security/advisories/new
+    about: Reporte privado; no publiques detalles sensibles en Issues.

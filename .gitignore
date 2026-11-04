@@ -1,0 +1,16 @@
+# Generated output and private data
+/build/
+/dist/
+.DS_Store
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.db
+*.log
+*.dmg
+*.zip
+*.p12
+*.p8
+*.key
+.env
+.env.*

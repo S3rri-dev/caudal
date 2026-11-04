@@ -1,0 +1,26 @@
+name: Error reproducible
+description: Un problema de funcionamiento con datos ficticios.
+title: "[Error] "
+body:
+  - type: markdown
+    attributes:
+      value: No adjuntes bases, extractos, saldos reales ni credenciales. Usa datos ficticios.
+  - type: input
+    id: version
+    attributes:
+      label: Versión de Caudal y macOS
+      placeholder: Caudal 0.4.0, macOS 27.0.1, Apple Silicon
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Incluye resultado esperado y resultado observado.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia con datos ficticios
+      description: Capturas opcionales; revisa su contenido antes de enviarlas.

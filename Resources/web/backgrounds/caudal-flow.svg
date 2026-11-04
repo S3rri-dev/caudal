@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
+<!-- Original procedural illustration, S3rri-dev 2026. SPDX-License-Identifier: GPL-3.0-or-later -->
+<defs>
+ <radialGradient id="forest" cx=".77" cy=".32" r=".9"><stop stop-color="#1b3526"/><stop offset=".55" stop-color="#09140e"/><stop offset="1" stop-color="#020604"/></radialGradient>
+ <linearGradient id="silk" x1="0" y1="1" x2=".9" y2=".1"><stop stop-color="#0a1b11"/><stop offset=".4" stop-color="#264632"/><stop offset=".7" stop-color="#8c9e79"/><stop offset=".77" stop-color="#263f2d"/><stop offset="1" stop-color="#0a1c12"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#566545" stop-opacity="0"/><stop offset=".5" stop-color="#d8c18c" stop-opacity=".65"/><stop offset="1" stop-color="#85956f" stop-opacity=".1"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#a0b48e" stop-opacity=".18"/><stop offset="1" stop-color="#67835c" stop-opacity="0"/></radialGradient>
+</defs>
+<path fill="url(#forest)" d="M0 0h3840v2160H0z"/>
+<ellipse cx="2700" cy="380" rx="1560" ry="1200" fill="url(#light)"/>
+<path d="M-500 2300C180 1190 1690 2080 2380 1200S3210 100 4140 180V2400Z" fill="url(#silk)"/>
+<path d="M-500 2300C180 1190 1690 2080 2380 1200S3210 100 4140 180" fill="none" stroke="url(#gold)" stroke-width="3"/>
+<path d="M-120 2280C590 1510 1680 2220 2520 1470S3260 410 4080 530" fill="none" stroke="#b3b891" stroke-opacity=".11" stroke-width="2"/>
+<path d="M-80 2150C800 1550 1400 2260 2370 1580S3200 640 4040 790" fill="none" stroke="url(#gold)" stroke-opacity=".27" stroke-width="1"/>
+<path d="M0 2160V1920C590 1760 1440 2180 2140 1930S3290 1000 3840 1280V2160Z" fill="#030a06" fill-opacity=".55"/>
+</svg>

@@ -1,0 +1,60 @@
+name: Preparar release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Etiqueta existente, por ejemplo v0.4.0
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ inputs.tag }}
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: macos-26
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ inputs.tag }}
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Validar etiqueta y evitar reemplazos
+        env:
+          TAG: ${{ inputs.tag }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 -c 'import json,os; assert os.environ["TAG"] == "v"+json.load(open("version.json"))["version"]'
+          test "$(git rev-parse HEAD)" = "$(git rev-parse "$TAG^{commit}")"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo 'Ya existe una release: no se reemplaza.'
+            exit 1
+          fi
+      - run: ./scripts/build.sh
+      - run: ./tests/run.sh
+      - run: ./tests/run-ui.sh
+      - run: ./tests/isolation.sh
+      - run: python3 scripts/audit_publication.py --history --bundle dist/Caudal.app
+      - run: ./scripts/package.sh
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: caudal-release
+          path: |
+            dist/*.dmg
+            dist/*-app.zip
+            dist/*-src.zip
+            dist/*-manifest.json
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
+      - name: Crear borrador para revisión
+        env:
+          TAG: ${{ inputs.tag }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(python3 -c 'import json;print(json.load(open("version.json"))["version"])')"
+          gh release create "$TAG" dist/*.dmg dist/*-app.zip dist/*-src.zip dist/*-manifest.json dist/SHA256SUMS.txt --verify-tag --draft --title "Caudal $version" --notes-file "docs/releases/$version.md"

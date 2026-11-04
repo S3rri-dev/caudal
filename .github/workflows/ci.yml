@@ -1,0 +1,35 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-26]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Herramientas existentes
+        run: |
+          xcrun swiftc --version
+          python3 --version
+      - run: python3 scripts/audit_publication.py --history
+      - run: ./scripts/build.sh
+      - run: ./tests/run.sh
+      - name: Formularios y apariencia en WebKit real
+        run: ./tests/run-ui.sh
+      - run: ./tests/isolation.sh
+      - run: python3 scripts/audit_publication.py --bundle dist/Caudal.app

@@ -1,0 +1,11 @@
+Caudal 0.4.0 — Mac Apple Silicon
+
+Arrastra Caudal.app a Aplicaciones. Si ya tienes una edición personal con el mismo nombre, conserva ambas en carpetas diferentes para no reemplazarla.
+
+Firma ad hoc. Sin Developer ID ni notarización. macOS puede impedir la apertura: revisa el origen y sigue el procedimiento de Apple en Privacidad y seguridad. No desactives Gatekeeper globalmente.
+
+Objetivo de compilación macOS 13; plataformas realmente comprobadas en docs/VERIFICACION.md del repositorio. La aplicación empieza sin datos financieros. Datos públicos: ~/Library/Application Support/Caudal/.
+
+Copyright © 2026 S3rri-dev y colaboradores. Código GPL-3.0-or-later, sin garantía. LICENSE, TRADEMARKS.md y THIRD_PARTY_NOTICES.md incluidos. La licencia no concede derechos de marca; no se afirma registro.
+
+Fuentes, ayuda y hashes: https://github.com/S3rri-dev/caudal
