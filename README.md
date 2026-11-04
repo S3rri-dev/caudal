@@ -11,7 +11,7 @@ Ingresos, gastos, presupuestos, ahorro y deudas. En tu Mac.
 [![GPL](https://img.shields.io/badge/c%C3%B3digo-GPL--3.0--or--later-d8c18c?labelColor=112017)](LICENSE)
 [![Mac](https://img.shields.io/badge/Mac-Apple%20Silicon-d8c18c?labelColor=112017)](docs/INSTALL.md)
 
-**[Descargar para Mac](https://github.com/S3rri-dev/caudal/releases/latest)** · **[Primeros pasos](docs/GETTING_STARTED.md)** · **[Ayuda](SUPPORT.md)**
+**[Descargar para Mac](https://github.com/S3rri-dev/caudal/releases/latest)** · **[Primeros pasos](docs/GETTING_STARTED.md)** · **[Caso técnico](https://github.com/S3rri-dev/S3rri-dev/blob/main/proyectos/caudal.md)** · **[Ayuda](SUPPORT.md)**
 
 Español · [English](README.en.md)
 </div>

@@ -7,7 +7,7 @@
 
 Income, expenses, budgets, savings and debt. On your Mac.
 
-**[Download for Mac](https://github.com/S3rri-dev/caudal/releases/latest)** · **[Getting started (Spanish)](docs/GETTING_STARTED.md)** · **[Support](SUPPORT.md)**
+**[Download for Mac](https://github.com/S3rri-dev/caudal/releases/latest)** · **[Getting started (Spanish)](docs/GETTING_STARTED.md)** · **[Technical case study](https://github.com/S3rri-dev/S3rri-dev/blob/main/proyectos/caudal.md#english)** · **[Support](SUPPORT.md)**
 
 [Español](README.md) · English
 </div>

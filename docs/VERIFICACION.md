@@ -47,9 +47,13 @@ Se revisó el borrador antes de publicarlo. Se descargaron sus cinco adjuntos y 
 
 Manifiesto y SHA256SUMS.txt completan los hashes y describen arquitectura, compilador y procedencia **local verified build**. Los binarios no proceden de Actions.
 
-**CI remota pendiente:** la ejecución https://github.com/S3rri-dev/caudal/actions/runs/41842987922 continúa en cola para macOS 15 y 26 durante esta entrega. No se declara superada ni se atribuyen pruebas en esas versiones. El workflow manual de releases está preparado; no se afirma haberlo ejecutado para generar esta publicación.
+**CI remota sin ejecución:** la ejecución https://github.com/S3rri-dev/caudal/actions/runs/41842987922 terminó con resultado global failure; los trabajos macOS 15 y 26 quedaron cancelled sin ejecutar pasos. Las anotaciones de GitHub indican que los trabajos no fueron adquiridos por un ejecutor hosted y restricciones de capacidad macOS ARM64. No se declara superada ni se atribuyen pruebas ejecutadas en esas versiones. El workflow manual de releases está preparado; no se afirma haberlo ejecutado para generar esta publicación.
 
 El escaneo de archivos, historial y binario no detectó patrones de rutas personales, credenciales o datos financieros empaquetados. Se revisaron los 56 enlaces locales Markdown, la procedencia de recursos y las imágenes; las 11 imágenes/badges del README cargaron en navegador. Las huellas de fuentes originales, app personal instalada y contenido lógico de bases personales/de referencia se mantuvieron idénticas.
+
+## Revisión del escaparate — 4 de noviembre de 2026
+
+Se añadieron enlaces desde los README español/inglés al caso técnico de S3rri-dev. Se repitieron scripts/build.sh, tests/run.sh (52), tests/run-ui.sh (64 y 20 capturas), tests/isolation.sh (11) y auditoría del bundle, con resultado correcto. Esta actualización es documental: no cambia el código, los datos, los identificadores ni los paquetes de la release. La interfaz revisada de la presentación es GitHub; no se atribuyen nuevas pruebas físicas en otros Mac.
 
 ## Límites
 

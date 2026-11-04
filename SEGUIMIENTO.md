@@ -1,5 +1,13 @@
 # Seguimiento público
 
+## 2026-11-04 · Presentación para revisión de ingeniería
+
+Los README español/inglés enlazan el caso técnico del perfil S3rri-dev, con modelo financiero, invariantes, arquitectura y rutas de revisión. Se actualizan descripción, temas y enlace de descarga del repositorio. No cambia la implementación ni se reemplazan los paquetes de la release.
+
+Se repitieron compilación ARM64, 52 comprobaciones de datos, 64 de interfaz nativa WebKit (20 capturas), 11 de aislamiento y auditoría de fuentes/bundle: correctas. Se mantienen los límites de compatibilidad y firma de la publicación.
+
+Actualización del estado remoto: CI 41842987922 terminó globalmente como failure; ambos trabajos quedaron cancelled, sin ejecutar pasos. Las anotaciones de GitHub indican falta de capacidad de runners macOS y ausencia de adquisición de los trabajos. No se declara CI superada. La actualización documental usa skip ci para no encolar de nuevo compilaciones de código sin cambios.
+
 ## 2026-11-04 · Preparación de 0.4.0
 
 Se prepara la primera publicación pública de Caudal a partir de la edición local, en una copia independiente. Se preservan la aplicación personal, sus datos y los proyectos de referencia.
