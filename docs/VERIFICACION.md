@@ -13,7 +13,7 @@ Fecha: 2026-11-04, Europe/Madrid. Compilación 5. Ejecución local en Mac ARM64 
 | Auditoría de fuentes y bundle | Sin patrones de credenciales, rutas personales o artefactos financieros detectados |
 | codesign --verify --deep --strict y plutil -lint | Correctos |
 
-El informe UI local está en `build/ui-20261104-145041/ui-result.json`; build/ no se publica. Las capturas seleccionadas de docs/images/ son de esa ejecución y contienen exclusivamente datos ficticios. La portada es una composición promocional identificada como tal.
+Informe de la primera ejecución y galería: `build/ui-20261104-145041/ui-result.json`; build/ no se publica. La compilación final ligada al commit repitió los mismos resultados; informe UI final: `build/ui-20261104-145756/ui-result.json`. Las capturas seleccionadas de docs/images/ son de esa ejecución y contienen exclusivamente datos ficticios. La portada es una composición promocional identificada como tal.
 
 Las 52 comprobaciones cubren céntimos, transferencias, deuda inicial/nuevas disposiciones, cuotas con principal e intereses, presupuestos, reservas, edición/borrado/deshacer, errores, CSV, copias, rechazos de restauración y persistencia. Las 64 de UI guardan formularios reales, verifican cifras, búsqueda, meses, ocho vistas, temas persistidos, accesibilidad simulada y ventana mínima. Las 11 de aislamiento comprueban bundles distintos y bases separadas.
 
@@ -33,7 +33,23 @@ Contraste de tokens sobre referencias densas: principal 12,67:1 claro / 15,88:1 
 
 ## Distribución y automatización
 
-El empaquetado se liga al commit declarado en Info.plist y al manifiesto. Los resultados de descarga, montaje y lanzamiento del paquete se añadirán tras la comprobación de la release. En este punto no se declara CI remota superada ni descarga pública comprobada.
+Release pública: https://github.com/S3rri-dev/caudal/releases/tag/v0.4.0. Repositorio publicado exclusivamente por S3rri-dev; identidad, autoría noreply y permisos ADMIN comprobados. Issues, Discussions y reporte privado de vulnerabilidades habilitados. Las acciones están fijadas por SHA y CI tiene permisos de lectura.
+
+Fuentes de la aplicación y paquetes: commit `e84e37c17adafcbf8a2a54e953609e65b63e7136`, etiqueta `v0.4.0`. El ZIP de fuentes descargado coincide archivo por archivo con los 72 archivos del commit; el ZIP de aplicación, DMG y build contienen el mismo bundle por SHA-256. Esta actualización documental posterior no cambia los paquetes etiquetados.
+
+Se revisó el borrador antes de publicarlo. Se descargaron sus cinco adjuntos y se verificaron SHA-256, avisos, acceso a Aplicaciones y arranque vacío aislado desde el DMG montado en solo lectura. Tras publicar, se descargaron otra vez los cinco adjuntos con curl sin autenticación, sin cookies y sin cabecera Authorization: **HTTP 200 en los cinco**, hashes correctos. Se montó la descarga pública en solo lectura (comprobado también con diskutil), se verificó la firma y se abrió la ventana nativa con una base nueva aislada. Se comprobó visualmente el resumen vacío y el formulario de primera cuenta; después se cerró la app y expulsó el volumen.
+
+| Adjunto | SHA-256 |
+| --- | --- |
+| Caudal-0.4.0-arm64.dmg | `a7b2c30d9571d153dcf9d8a693f9e9654444265a88e24048bcc145f03e002fa1` |
+| Caudal-0.4.0-arm64-app.zip | `726c5e52676b7a2045cbe82813f43804084e8533941ffef5292dcdb5915e43e7` |
+| Caudal-0.4.0-src.zip | `1965ecb5d4058b3538302101ea2ef421658e1e42c9ccf410b017f63acafa727b` |
+
+Manifiesto y SHA256SUMS.txt completan los hashes y describen arquitectura, compilador y procedencia **local verified build**. Los binarios no proceden de Actions.
+
+**CI remota pendiente:** la ejecución https://github.com/S3rri-dev/caudal/actions/runs/41842987922 continúa en cola para macOS 15 y 26 durante esta entrega. No se declara superada ni se atribuyen pruebas en esas versiones. El workflow manual de releases está preparado; no se afirma haberlo ejecutado para generar esta publicación.
+
+El escaneo de archivos, historial y binario no detectó patrones de rutas personales, credenciales o datos financieros empaquetados. Se revisaron los 56 enlaces locales Markdown, la procedencia de recursos y las imágenes; las 11 imágenes/badges del README cargaron en navegador. Las huellas de fuentes originales, app personal instalada y contenido lógico de bases personales/de referencia se mantuvieron idénticas.
 
 ## Límites
 
